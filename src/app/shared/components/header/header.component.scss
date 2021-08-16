@@ -1,0 +1,111 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height: 10em;
+}
+.container .top-header {
+  display: flex;
+  padding: 0 5em;
+  padding-top: 5px;
+  justify-content: space-between;
+  background-color: white;
+  height: 6em;
+  align-items: center;
+}
+.container .top-header #logo {
+  object-fit: cover;
+}
+
+.container .top-header .user-card-profile {
+  width: 20%;
+  height: 75%;
+  border-radius: 6px;
+  padding-top: 5px;
+  border: 1px solid rgb(160, 160, 160);
+  align-items: center;
+  // box-shadow: 0 3px 6px grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.container .top-header .user-card-profile .area-avatar {
+  width: 35%;
+}
+.container .top-header .user-card-profile .area-avatar .circular-avatar {
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 0.5px solid;
+}
+
+.container .top-header .user-card-profile .user-card-profile-detail {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  width: 60%;
+  max-width: 10em;
+  max-height: 3.5em;
+  p {
+    font-size: 15px;
+    font-weight: normal;
+    font-style: italic;
+    word-wrap: break-word;
+  }
+  a {
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    font-style: normal;
+    color: #282a36;
+  }
+}
+
+.container .bottom-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 4em;
+  background-color: #282a36;
+  opacity: 0.9;
+  box-shadow: 0 5px 10px grey;
+}
+// .container .content-header {
+//   display: flex;
+//   // width: 30em;
+// }
+.container .content-header ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.container .content-header ul li {
+  list-style: none;
+  padding: 15px;
+  margin: 0 2em;
+  font-size: 18px;
+  color: white;
+  // border-radius: 5px;
+}
+.container .content-header ul li:hover {
+  transition: 0.1s;
+  cursor: pointer;
+  border-bottom: 2px solid #50fa7b;
+  color: #50fa7b;
+  // color: #282a36;
+  // opacity: 0.9;
+}
+.container .content-header ul .sign-out-button {
+  cursor: pointer;
+  color: #f73939;
+  font-size: 19px;
+}
+.container .content-header ul .sign-out-button:hover {
+  color: #f72f2f;
+  border-bottom: 2px solid #f73939;
+}

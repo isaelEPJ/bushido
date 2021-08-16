@@ -1,0 +1,101 @@
+.container {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+}
+.container #central-image {
+  width: 65%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0 0 25px grey;
+}
+.container .action-login {
+  width: 35%;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 2em;
+  // margin-top: 1em;
+}
+.container .action-login h3 {
+  font-weight: normal;
+  font-size: 18px;
+  font-weight: normal;
+  border: none;
+  background-color: transparent;
+  color: #282a36;
+}
+.container .action-login h3:hover {
+  color: #000;
+}
+.container .action-login #logo {
+  object-fit: cover;
+  height: 14em;
+}
+.container .action-login .form-area {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.container .action-login .form-area .form-field {
+  padding: 13px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 3px 8px #BEBEBE;
+}
+.container .action-login .form-area .form-field:focus {
+  outline: none;
+}
+.container .action-login .form-area .register-options-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 5px;
+  margin: 5px 0;
+  button {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+
+  .register-button {
+    color: white;
+    width: 10em;
+    border: 2px solid #000;
+    background-color: #282a36;
+  }
+  .register-button:hover {
+    cursor: pointer;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgb(160, 160, 160);
+  }
+
+  .back-login-button {
+    align-self: baseline;
+    font-weight: normal;
+    border: none;
+    background-color: transparent;
+    color: #282a36;
+  }
+  .back-login-button:hover {
+    cursor: pointer;
+    color: #000;
+  }
+}
+.help-register-button {
+  margin-top: 1em;
+  align-self: baseline;
+  font-size: 17px;
+  font-weight: normal;
+  border: none;
+  background-color: transparent;
+  color: #282a36;
+}
+.help-register-button:hover {
+  cursor: pointer;
+  color: #000;
+}

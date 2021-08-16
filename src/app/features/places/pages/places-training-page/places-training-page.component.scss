@@ -1,0 +1,72 @@
+.container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 1em 0;
+}
+.container .content-page {
+  display: flex;
+  flex-direction: row;
+}
+.container .users-page-data {
+  width: 25%;
+  margin: 3%;
+  border-radius: 6px;
+  padding: 10px 0;
+  // border: 1px solid;
+  margin-top: 3em;
+  // box-shadow: 0 0 15px grey;
+}
+.container .users-page-data .students-option {
+  padding: 1em;
+  // border: 1px solid;
+  margin-bottom: 1em;
+  box-shadow: 0 0 5px grey;
+  border-radius: 5px;
+}
+.container .users-page-data .students-option:hover {
+  padding: 1em;
+  cursor: pointer;
+  box-shadow: inset 0 0 5px #50fa7b;
+}
+.container .users-page-data .students-option p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #282a36;
+}
+.container .principal-users-page {
+  width: 55%;
+  height: 35em;
+  margin: 5%;
+  border-radius: 6px;
+  box-shadow: 0 0 5px grey;
+  margin-top: 3em;
+  padding: 1em;
+}
+.container .principal-users-page .student-scroll {
+  height: 30em;
+  overflow-y: scroll;
+}
+.container .principal-users-page .student-scroll .students-list {
+  display: flex;
+  flex-direction: row;
+  // justify-content: space-between;
+  height: 4em;
+  border-radius: 6px;
+  padding: 5px 10px;
+  margin-bottom: 1em;
+  border: 1px solid grey;
+}
+.container .principal-users-page .students-list:hover {
+  // box-shadow: inset  2px 0 3px #50fa7b;
+  background-color: #e4f8e8;
+  border: inset 1px solid #50fa7b;
+  // padding: 4px 9px;
+  cursor: pointer;
+}
+.container .principal-users-page .students-list .user-image {
+  width: 4em;
+  height: 4em;
+  border-radius: 20%;
+  // border: 0.5px solid;
+}

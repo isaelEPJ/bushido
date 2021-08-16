@@ -1,0 +1,47 @@
+<app-header></app-header>
+<div class="container">
+  <app-title-page title="Meus Alunos"> </app-title-page>
+  <div class="content-page">
+    <div class="users-page-data">
+      <div routerLink="/students/create" class="students-option">
+        <p>Cadastrar Aluno_</p>
+      </div>
+      <div routerLink="/student/:id" class="students-option">
+        <p>Filtar Alunos_</p>
+      </div>
+      <div routerLink="/" class="students-option">
+        <p>Outro_</p>
+      </div>
+      <div class="description-page">
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </p>
+      </div>
+    </div>
+    <div class="principal-users-page">
+      <div class="student-scroll">
+        <div
+          class="students-list"
+          *ngFor="let student of students"
+          [routerLink]="['/student', student.id]"
+        >
+          <img
+            class="user-image"
+            [src]="student.imageUrl"
+            [alt]="student.name"
+          />
+
+          <p>{{ student.name }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
