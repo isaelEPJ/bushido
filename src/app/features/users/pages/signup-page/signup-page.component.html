@@ -1,0 +1,114 @@
+<div class="container">
+  <div class="action-signup">
+    <img id="logo" src="assets/images/logo.png" alt="logo" />
+    <h3>Crie sua conta conosco</h3>
+    <!-- <mat-divider></mat-divider> -->
+    <form [formGroup]="signUpForm" class="form-area">
+      <mat-form-field appearance="outline">
+        <mat-label>Nome Completo</mat-label>
+
+        <input
+          matInput
+          formControlName="name"
+          type="text"
+          class="form-field"
+          placeholder="Digite seu nome completo"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <input
+          matInput
+          formControlName="email"
+          type="email"
+          class="form-field"
+          placeholder="Example@mail.com"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>CPF</mat-label>
+        <input
+          matInput
+          formControlName="cpf"
+          type="text"
+          class="form-field"
+          placeholder="123.456.789-11"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Apelido</mat-label>
+        <input
+          matInput
+          formControlName="codename"
+          type="text"
+          class="form-field"
+          placeholder="deseja ser chamado como?"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Graduaçao</mat-label>
+        <mat-select formControlName="graduation">
+          <mat-option
+            *ngFor="let belt of bjjBelts"
+            value="{{ belt.belt }}"
+            control
+            >{{ belt.belt }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Url da imagem</mat-label>
+        <input
+          matInput
+          formControlName="urlimage"
+          type="text"
+          class="form-field"
+          placeholder="imagem"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Senha</mat-label>
+        <input
+          matInput
+          formControlName="password"
+          type="password"
+          class="form-field"
+          placeholder="Sua Senha"
+        />
+      </mat-form-field>
+
+      <!-- <div class="container">
+        <mat-checkbox class="example-margin" formControlName="isadmin"
+          >Adm</mat-checkbox
+        >
+      </div> -->
+
+      <div class="register-options-buttons">
+        <button
+          (click)="redirectToLogin()"
+          type="button"
+          class="back-login-button"
+        >
+          Fazer Login
+        </button>
+        <button
+          (click)="createUser(signUpForm)"
+          type="button"
+          class="register-button"
+        >
+          Cadastrar
+        </button>
+      </div>
+      <!-- <button routerLink="/help" type="button" class="help-register-button">
+        Preciso de Ajuda
+      </button> -->
+    </form>
+  </div>
+  <img id="central-image" [src]="decorationImageUrl" alt="Imagem" />
+</div>

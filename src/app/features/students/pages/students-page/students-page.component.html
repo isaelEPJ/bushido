@@ -1,6 +1,8 @@
 <app-header></app-header>
 <div class="container">
-  <app-title-page title="Meus Alunos"> </app-title-page>
+  <h2 class="title-text-page" *ngIf="titleText">{{ titleText }}</h2>
+  <h2 class="title-text-page" *ngIf="!titleText">Sem titulo</h2>
+
   <div class="content-page">
     <div class="users-page-data">
       <div routerLink="/students/create" class="students-option">

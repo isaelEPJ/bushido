@@ -8,7 +8,12 @@ import { RegisterStudentsPageComponent } from './pages/register-students-page/re
 import { StudentDetailPageComponent } from './pages/student-detail-page/student-detail-page.component';
 
 @NgModule({
-  declarations: [StudentsPageComponent, StudentsOptionsComponent, RegisterStudentsPageComponent, StudentDetailPageComponent],
+  declarations: [
+    StudentsPageComponent,
+    StudentsOptionsComponent,
+    RegisterStudentsPageComponent,
+    StudentDetailPageComponent,
+  ],
   imports: [CommonModule, RouterModule, SharedModule],
 })
 export class StudentsModule {}

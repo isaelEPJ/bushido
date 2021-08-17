@@ -11,7 +11,8 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   constructor(private router: Router, private usersService: UsersService) {}
 
-  user = this.usersService.getUsersById('1') as UserModel;
+  // user = sessionStorage.getItem<UserModel>('currentUser');
+  // user = this.usersService.getUsersById('1') as UserModel;
 
   ngOnInit(): void {}
   SignOut() {

@@ -4,14 +4,14 @@
   flex-direction: row;
 }
 .container #central-image {
-  width: 68%;
+  width: 60%;
   height: 100%;
   object-fit: cover;
   box-shadow: 0 0 25px gray;
 }
 .container .action-login {
-  width: 32%;
-  padding: 15px 20px;
+  width: 40%;
+  padding: 3em;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -42,14 +42,13 @@
   justify-content: space-around;
 }
 .container .action-login .form-area .form-field {
+  width: 90%;
   padding: 20px;
   border-radius: 5px;
   border: none;
-  box-shadow: 0 5px 15px #BEBEBE;
+  box-shadow: 0 5px 15px #bebebe;
 }
-.container .action-login .form-area .form-field:focus {
-  outline: none;
-}
+
 .container .action-login .form-area .enter-button {
   padding: 10px;
   border-radius: 5px;
@@ -62,7 +61,7 @@
 .container .action-login .form-area .enter-button:hover {
   cursor: pointer;
   transform: translateY(-1px);
-  box-shadow: 0 10px 15px #BEBEBE;
+  box-shadow: 0 10px 15px #bebebe;
   background-color: #31323a;
 }
 .container .action-login .form-area p {
@@ -88,4 +87,50 @@
 .back-login-button:hover {
   cursor: pointer;
   color: #000;
+}
+.error-login-message {
+  color: red;
+  font-size: 3%;
+  align-self: center;
+}
+.container .action-login .form-area .register-options-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 5px;
+  margin: 5px 0;
+  align-items: center;
+  button {
+    // padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+
+  .register-button {
+    color: white;
+    width: 10em;
+    height: 2.5em;
+    border: 2px solid #000;
+    background-color: #282a36;
+  }
+  .register-button:hover {
+    cursor: pointer;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgb(160, 160, 160);
+  }
+
+  .back-login-button {
+    width: 10em;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    font-weight: normal;
+    border: none;
+    background-color: transparent;
+    color: #282a36;
+  }
+  .back-login-button:hover {
+    cursor: pointer;
+    color: #000;
+  }
 }

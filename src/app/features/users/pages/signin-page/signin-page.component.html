@@ -1,0 +1,64 @@
+<div class="container">
+  <img id="central-image" [src]="decorationImageUrl" alt="Imagem principal" />
+
+  <div class="action-login">
+    <img id="logo" src="assets/images/logo.png" alt="logo" />
+    <h3>Faça Seu Login</h3>
+    <mat-divider></mat-divider>
+    <form [formGroup]="userForm" class="form-area">
+      <mat-form-field appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <span matPrefix>
+          <mat-icon>mail</mat-icon>
+        </span>
+        <input
+          matInput
+          formControlName="login"
+          type="email"
+          formGroupName="login"
+          placeholder="Example@mail.com"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Senha</mat-label>
+        <span matPrefix>
+          <mat-icon>lock</mat-icon>
+        </span>
+        <input
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          placeholder="*****"
+          formControlName="password"
+          type="password"
+          formGroupName="password"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <div class="register-options-buttons">
+        <button
+          (click)="redirectToRegister()"
+          type="button"
+          class="back-login-button"
+        >
+          Crie sua conta
+        </button>
+        <button
+          (click)="validateLogin(userForm)"
+          type="button"
+          class="register-button"
+        >
+          Entrar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

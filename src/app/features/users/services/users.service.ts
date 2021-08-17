@@ -9,6 +9,14 @@ import { stringify } from '@angular/compiler/src/util';
   providedIn: 'root',
 })
 export class UsersService {
+  bjjBelts = [
+    { id: 1, belt: 'Faixa branca' },
+    { id: 2, belt: 'faixa azul' },
+    { id: 3, belt: 'faixa roxa' },
+    { id: 4, belt: 'faixa marrom' },
+    { id: 5, belt: 'faixa preta' },
+  ];
+
   users: Array<UserModel> = [
     // {
     //   id: '1',
@@ -26,33 +34,46 @@ export class UsersService {
     //   createdAt: new Date(),
     // },
   ];
-  constructor(private httpClient: HttpClient) {
-    // this.users = httpClient.get<Array<UserModel>>(URL_BASE + '/users');
-  }
-  // login(){
-  //   this.http
-  //   .post(`${URL_BASE}/users/login`, { email, password })
-  //   .subscribe((user) => {
-  //     sessionStorage.setItem(
-  //       'currentUser',
-  //       JSON.stringify(user as UserModel)
-  //     );
-  //     return this.router.navigateByUrl('home');
-  //   });
-  // }
+  constructor(private httpClient: HttpClient) {}
+
   getUsers() {
     return this.httpClient.get<UserModel>(URL_BASE + '/users');
   }
   getUsersById(id: string) {
     return this.users.find((user) => user.id === id);
   }
+  createUser(
+    name: string,
+    imageUrl: string,
+    email: string,
+    password: string,
+    codename: string,
+    cpf: string,
+    graduation: string
+  ) {
+    return this.httpClient.post<UserModel>( 'http://localhost:3000/users/login/create', {
+      name,
+      imageUrl,
+      email,
+      password,
+      codename,
+      cpf,
+      graduation,
+      description: '',
+      isAdmin: true,
+      isActivate: true,
+    });
+  }
   getUserByEmailAndPassword(email: string, password: string) {
     // return this.users.find(
     //   (user) => user.email === email && user.password === password
     // );
-    return this.httpClient.post<UserModel>(URL_BASE + '/users/login', {
-      email,
-      password,
-    });
+    return this.httpClient.post<UserModel>(
+      'http://localhost:3000/users/login',
+      {
+        email,
+        password,
+      }
+    );
   }
 }

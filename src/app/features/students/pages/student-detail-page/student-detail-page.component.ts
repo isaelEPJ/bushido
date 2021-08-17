@@ -10,6 +10,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class StudentDetailPageComponent implements OnInit {
   @Input() student?: Student;
+  titleText?: string = 'Aluno';
 
   constructor(
     private activateRoute: ActivatedRoute,

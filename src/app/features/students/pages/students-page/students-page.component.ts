@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentsPageComponent implements OnInit {
   students: Array<Student>;
-
+  titleText: string = 'Meus Alunos';
   constructor(private studentsService: StudentsService) {
     this.students = studentsService.listStudents();
   }

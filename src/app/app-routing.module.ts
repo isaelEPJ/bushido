@@ -1,3 +1,5 @@
+import { SignupPageComponent } from './features/users/pages/signup-page/signup-page.component';
+import { SigninPageComponent } from './features/users/pages/signin-page/signin-page.component';
 import { StudentDetailPageComponent } from './features/students/pages/student-detail-page/student-detail-page.component';
 import { RegisterStudentsPageComponent } from './features/students/pages/register-students-page/register-students-page.component';
 import { PlacesTrainingPageComponent } from './features/places/pages/places-training-page/places-training-page.component';
@@ -6,15 +8,13 @@ import { SportsPageComponent } from './features/sports/pages/sports-page/sports-
 import { StudentsPageComponent } from './features/students/pages/students-page/students-page.component';
 import { AuthGuard } from './shared/guard/auth/auth.guard';
 import { HomePageComponent } from './features/home/pages/home-page/home-page.component';
-import { LoginPageComponent } from './features/auth/pages/login-page/login-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RegisterPageComponent } from './features/auth/pages/register-page/register-page.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
-  { path: 'login', component: LoginPageComponent },
-  { path: 'register', component: RegisterPageComponent },
+  { path: 'login', component: SigninPageComponent },
+  { path: 'register', component: SignupPageComponent },
   { path: 'home', component: HomePageComponent, canActivate: [AuthGuard] },
   //inicio das rotas relacionadas a estudantes
   {

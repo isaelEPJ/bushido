@@ -1,6 +1,7 @@
 <app-header></app-header>
 <div class="container">
-  <app-title-page title="Locais de Treino"> </app-title-page>
+  <h2 class="title-text-page" *ngIf="titleText">{{ titleText }}</h2>
+  <h2 class="title-text-page" *ngIf="!titleText">Sem titulo</h2>
   <div class="content-page">
     <div class="users-page-data">
       <div class="students-option">
