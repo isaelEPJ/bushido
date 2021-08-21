@@ -1,12 +1,14 @@
+import { UserModel } from './../../model/users.model';
+import { MatDialog } from '@angular/material/dialog';
 import { UsersService } from './../../../users/services/users.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {
-  MatSnackBar,
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
+import { FailDialogComponent } from 'src/app/shared/components/dialogs/fail-dialog/fail-dialog.component';
 
 @Component({
   selector: 'app-signin-page',
@@ -19,51 +21,92 @@ export class SigninPageComponent implements OnInit {
   constructor(
     private usersService: UsersService,
     private router: Router,
-    private _snackBar: MatSnackBar
+    private _dialog: MatDialog
   ) {}
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
-  openSnackBar(message: string, action: string) {
-    this._snackBar.open(message, action, {
-      horizontalPosition: this.horizontalPosition,
-      verticalPosition: this.verticalPosition,
-      duration: 5000,
-    });
-  }
+  // openSnackBar(message: string, action: string) {
+  //   this._snackBar.open(message, action, {
+  //     horizontalPosition: this.horizontalPosition,
+  //     verticalPosition: this.verticalPosition,
+  //     duration: 5000,
+  //   });
+  // }
 
   hide: boolean = true;
 
   userForm = new FormGroup({
-    login: new FormControl(),
-    password: new FormControl(),
+    login: new FormControl('', [
+      Validators.required,
+      Validators.email,
+      Validators.minLength(10),
+    ]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(5),
+    ]),
   });
 
   ngOnInit(): void {}
   validateLogin(loginForm: FormGroup) {
     const userFormValue = loginForm.value;
     if (!userFormValue) {
-      console.error('Erro no login:informaçoes erradas');
+      this._dialog.open(FailDialogComponent, {
+        width: '300px',
+        data: {
+          title: 'Ocorreu um erro',
+          message:
+            'Ops! alguma informaçao errada, tente novamente ou entre em contato conosco',
+        },
+      });
     }
     this.usersService
       .getUserByEmailAndPassword(userFormValue.login, userFormValue.password)
-      .subscribe((user) => {
-        if (!user) {
-          this.openSnackBar('Houve um problema no login', 'Tentar novamente');
-          sessionStorage.clear();
-          return this.router.navigateByUrl('login');
-        }
-        if (
-          user.email === userFormValue.login &&
-          user.password === userFormValue.password
-        ) {
-          this.router.navigateByUrl('home');
-          return sessionStorage.setItem('currentUser', JSON.stringify(user));
-        }
+      .subscribe(
+        (user) => {
+          if (!user) {
+            this._dialog.open(FailDialogComponent, {
+              width: '300px',
+              data: {
+                title: 'Erro',
+                message: 'Usuário não encontrado',
+              },
+            });
 
-        this.openSnackBar('Email ou Senha incorretos', 'Tentar novamente');
-      });
+            this._dialog.open(FailDialogComponent, {
+              width: '350px',
+              data: {
+                title: 'Erro',
+                message: 'Tente novamente',
+              },
+            });
+          }
+          if (
+            user.email === userFormValue.login ||
+            (user.password === userFormValue.password && (user as UserModel))
+          ) {
+            this.router.navigateByUrl('home');
+            return sessionStorage.setItem('currentUser', JSON.stringify(user));
+          }
+          this._dialog.open(FailDialogComponent, {
+            width: '350px',
+            data: {
+              message: 'Erro na autenticaçao, tente novamente',
+            },
+          });
+        },
+        (error) => {
+          this._dialog.open(FailDialogComponent, {
+            width: '300px',
+            data: {
+              title: 'Ocorreu um problema',
+              message: error.error,
+            },
+          });
+        }
+      );
   }
 
   SignOut() {

@@ -1,3 +1,197 @@
 <app-header> </app-header>
 
-<p>cadastro de estudantes</p>
+<div class="container">
+  <h2 class="title-text-page" *ngIf="titleText">{{ titleText }}</h2>
+  <!-- <form class="create-student-form"></form> -->
+  <form [formGroup]="registerStudentForm" class="form-area">
+    <mat-form-field appearance="outline">
+      <mat-label>Nome Completo</mat-label>
+
+      <input
+        matInput
+        formControlName="name"
+        type="text"
+        class="form-field"
+        placeholder="Digite seu nome completo"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>E-mail</mat-label>
+      <input
+        matInput
+        formControlName="email"
+        type="email"
+        class="form-field"
+        placeholder="Example@mail.com"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>CPF</mat-label>
+      <input
+        matInput
+        formControlName="cpf"
+        type="text"
+        class="form-field"
+        placeholder="123.456.789-11"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Valor da Mensalidade</mat-label>
+      <input
+        matInput
+        formControlName="paymentDetail"
+        type="number"
+        class="form-field"
+        placeholder="$$"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Observaçoes</mat-label>
+      <input
+        matInput
+        formControlName="details"
+        type="text"
+        class="form-field"
+        placeholder="Escreva aqui as observaçoes"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Detalhes de ultima graduaçao</mat-label>
+      <input
+        matInput
+        formControlName="lastGraduationDetail"
+        type="text"
+        class="form-field"
+        placeholder="Ultimos detalhes"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Telefone de contato</mat-label>
+      <input
+        matInput
+        formControlName="phone"
+        type="text"
+        class="form-field"
+        placeholder="Ultimos detalhes"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Rua</mat-label>
+      <input
+        matInput
+        formControlName="location_rua"
+        type="text"
+        class="form-field"
+        placeholder="Ultimos detalhes"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Numero</mat-label>
+      <input
+        matInput
+        formControlName="location_numero"
+        type="text"
+        class="form-field"
+        placeholder="Ultimos detalhes"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Cidade</mat-label>
+      <input
+        matInput
+        formControlName="location_cidade"
+        type="text"
+        class="form-field"
+        placeholder="Ultimos detalhes"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Estado</mat-label>
+      <input
+        matInput
+        formControlName="location_estado"
+        type="text"
+        class="form-field"
+        placeholder="Ultimos detalhes"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Cep</mat-label>
+      <input
+        matInput
+        formControlName="location_cep"
+        type="text"
+        class="form-field"
+        placeholder="Ultimos detalhes"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Graduaçao</mat-label>
+      <mat-select formControlName="graduation">
+        <mat-option
+          *ngFor="let belt of bjjBelts"
+          value="{{ belt.belt }}"
+          control
+          >{{ belt.belt }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Url da imagem</mat-label>
+      <input
+        matInput
+        formControlName="imageUrl"
+        type="text"
+        class="form-field"
+        placeholder="imagem"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Idade</mat-label>
+      <input
+        matInput
+        formControlName="age"
+        type="number"
+        class="form-field"
+        placeholder="  idade"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Tempo de treino (Em anos)</mat-label>
+      <input
+        matInput
+        formControlName="timePratice"
+        type="number"
+        class="form-field"
+        placeholder="0.5 (5 meses)"
+      />
+    </mat-form-field>
+
+    <!-- <mat-form-field appearance="outline">
+      <mat-label>Data de ultima graduaçao</mat-label>
+      <input matInput type="text" class="form-field" placeholder="" />
+    </mat-form-field> -->
+
+    <!-- <p>
+      <mat-checkbox formControlName="admin" value="false"
+        >Sou Adm</mat-checkbox
+      >
+    </p>  -->
+
+    <button
+      (click)="createStudent(registerStudentForm)"
+      type="button"
+      class="register-button"
+    >
+      Cadastrar
+    </button>
+  </form>
+</div>

@@ -30,6 +30,19 @@
   flex-direction: row;
   justify-content: space-around;
 }
+.container .top-header .user-card-profile:hover {
+  cursor: pointer;
+}
+.container .top-header .user-card-profile .below-menu {
+  display: flex;
+}
+
+.container .top-header .user-card-profile .below-menu .show-menu-card {
+  display: flex;
+  width: 100em;
+  height: 60em;
+}
+
 .container .top-header .user-card-profile .area-avatar {
   width: 35%;
 }

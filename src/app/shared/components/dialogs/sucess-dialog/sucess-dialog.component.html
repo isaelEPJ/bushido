@@ -1,0 +1,10 @@
+<div id="container">
+  <h1 mat-dialog-title>{{ data.title }}</h1>
+  <div mat-dialog-content>
+    <img src=".\assets\images\sucess_Astronaut_green.svg" alt="sucess" />
+    <p>{{ data.message }}</p>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Ok</button>
+  </div>
+</div>

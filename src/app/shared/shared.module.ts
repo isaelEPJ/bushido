@@ -11,13 +11,24 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
-import { SingleDialogComponent } from './components/dialogs/single-dialog/single-dialog.component';
 import { InfoDialogComponent } from './components/dialogs/info-dialog/info-dialog.component';
-import { MultiDialogComponent } from './components/dialogs/multi-dialog/multi-dialog.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSelectModule } from '@angular/material/select';
+import { SucessDialogComponent } from './components/dialogs/sucess-dialog/sucess-dialog.component';
+import { FailDialogComponent } from './components/dialogs/fail-dialog/fail-dialog.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { NotDataComponent } from './components/not-data/not-data.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatCardModule } from '@angular/material/card';
 
-const components = [HeaderComponent, SingleDialogComponent];
+const components = [
+  HeaderComponent,
+  InfoDialogComponent,
+  SucessDialogComponent,
+  FailDialogComponent,
+  NotFoundComponent,
+  NotDataComponent,
+];
 const materialModules = [
   MatDividerModule,
   MatButtonModule,
@@ -28,17 +39,14 @@ const materialModules = [
   MatDialogModule,
   MatSnackBarModule,
   MatSelectModule,
+  MatMenuModule,
+  MatCardModule,
 ];
 const pipes = [];
 const directives = [];
 
 @NgModule({
-  declarations: [
-    ...components,
-    SingleDialogComponent,
-    InfoDialogComponent,
-    MultiDialogComponent,
-  ],
+  declarations: [...components, NotFoundComponent, NotDataComponent],
   imports: [CommonModule, ...materialModules, RouterModule],
   exports: [...components, ...materialModules],
 })

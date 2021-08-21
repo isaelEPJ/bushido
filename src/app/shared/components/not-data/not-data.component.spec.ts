@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SingleDialogComponent } from './single-dialog.component';
+import { NotDataComponent } from './not-data.component';
 
-describe('SingleDialogComponent', () => {
-  let component: SingleDialogComponent;
-  let fixture: ComponentFixture<SingleDialogComponent>;
+describe('NotDataComponent', () => {
+  let component: NotDataComponent;
+  let fixture: ComponentFixture<NotDataComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SingleDialogComponent ]
+      declarations: [ NotDataComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SingleDialogComponent);
+    fixture = TestBed.createComponent(NotDataComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

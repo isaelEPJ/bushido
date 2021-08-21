@@ -17,27 +17,15 @@ export class UsersService {
     { id: 5, belt: 'faixa preta' },
   ];
 
-  users: Array<UserModel> = [
-    // {
-    //   id: '1',
-    //   name: 'Isael Junior',
-    //   email: 'isael@gmail.com',
-    //   imageUrl: 'https://avatars.githubusercontent.com/u/70731079?v=4',
-    //   cpf: '11229338488',
-    //   password: '111',
-    //   codename: 'Isael',
-    //   graduation: 'string',
-    //   description: 'string',
-    //   isAdmin: true,
-    //   isActivate: true,
-    //   alteredAt: new Date(),
-    //   createdAt: new Date(),
-    // },
-  ];
+  users: Array<UserModel> = [];
   constructor(private httpClient: HttpClient) {}
 
+  ngOnInit(): void {
+    const getUsers = this.httpClient.get<Array<UserModel>>(URL_BASE + '/users');
+  }
+
   getUsers() {
-    return this.httpClient.get<UserModel>(URL_BASE + '/users');
+    return this.httpClient.get<Array<UserModel>>(URL_BASE + '/users');
   }
   getUsersById(id: string) {
     return this.users.find((user) => user.id === id);
@@ -51,7 +39,7 @@ export class UsersService {
     cpf: string,
     graduation: string
   ) {
-    return this.httpClient.post<UserModel>( 'http://localhost:3000/users/login/create', {
+    return this.httpClient.post(URL_BASE + '/users/create', {
       name,
       imageUrl,
       email,
@@ -65,15 +53,9 @@ export class UsersService {
     });
   }
   getUserByEmailAndPassword(email: string, password: string) {
-    // return this.users.find(
-    //   (user) => user.email === email && user.password === password
-    // );
-    return this.httpClient.post<UserModel>(
-      'http://localhost:3000/users/login',
-      {
-        email,
-        password,
-      }
-    );
+    return this.httpClient.post<UserModel>(URL_BASE + '/users/login', {
+      email,
+      password,
+    });
   }
 }

@@ -1,12 +1,15 @@
+import { SucessDialogComponent } from './../../../../shared/components/dialogs/sucess-dialog/sucess-dialog.component';
+import { FailDialogComponent } from './../../../../shared/components/dialogs/fail-dialog/fail-dialog.component';
 import { UsersService } from './../../../users/services/users.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {
   MatSnackBar,
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-signup-page',
   templateUrl: './signup-page.component.html',
@@ -18,7 +21,7 @@ export class SignupPageComponent implements OnInit {
   constructor(
     private usersService: UsersService,
     private router: Router,
-    private _snackBar: MatSnackBar
+    private _dialog: MatDialog
   ) {}
   bjjBelts = this.usersService.bjjBelts;
   decorationImageUrl: string =
@@ -28,52 +31,79 @@ export class SignupPageComponent implements OnInit {
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
   signUpForm = new FormGroup({
-    name: new FormControl(),
-    email: new FormControl(),
-    cpf: new FormControl(),
-    codename: new FormControl(),
-    graduation: new FormControl(),
-    // isAdmin: new FormControl(),
+    name: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    cpf: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    codename: new FormControl('', [
+      Validators.required,
+      Validators.minLength(5),
+    ]),
+    graduation: new FormControl('', [
+      Validators.required,
+      Validators.minLength(5),
+    ]),
     password: new FormControl(),
     urlimage: new FormControl(),
   });
 
   createUser(newUserForm: FormGroup) {
     const userValue = newUserForm.value;
-    if (!userValue) {
-      console.log('problema nas informaoes dp cadastroo');
-    }
-    this.usersService.createUser(
-      userValue.name,
-      userValue.email,
-      userValue.cpf,
-      userValue.codename,
-      userValue.graduation,
-      userValue.password,
-      userValue.urlimage
-    );
-    console.log(
-      userValue.name,
-      userValue.email,
-      userValue.cpf,
-      userValue.codename,
-      userValue.graduation,
-      userValue.password,
-      userValue.urlimage
-    );
 
-    this.openSnackBar('Usuario cadastrado', 'ok');
+    if (!userValue) {
+      this._dialog.open(FailDialogComponent, {
+        width: '350px',
+        data: {
+          title: 'Ocorreu um erro',
+          message: 'Problema nas Informaçoes do cadastro',
+        },
+      });
+    }
+    this.usersService
+      .createUser(
+        userValue.name,
+        userValue.urlimage,
+        userValue.email,
+        userValue.password,
+        userValue.codename,
+        userValue.cpf,
+        userValue.graduation
+      )
+      .subscribe(
+        (userResult) => {
+          this._dialog.open(SucessDialogComponent, {
+            width: '350px',
+            data: {
+              title: 'Sucesso',
+              message: 'Usuário cadastrado com sucesso',
+            },
+          });
+          this.signUpForm.reset();
+          this.router.navigateByUrl('/login');
+        },
+        (error) => {
+          console.log(error);
+
+          this._dialog.open(FailDialogComponent, {
+            width: '350px',
+            data: {
+              message:
+                error.error ||
+                'Ops! alguma informaçao errada, tente novamente ou entre em contato conosco',
+            },
+          });
+        }
+      );
   }
   redirectToLogin() {
     this.signUpForm.reset();
     return this.router.navigateByUrl('login');
   }
 
-  openSnackBar(message: string, action: string) {
-    this._snackBar.open(message, action, {
-      horizontalPosition: this.horizontalPosition,
-      verticalPosition: this.verticalPosition,
-      duration: 5000,
-    });
-  }
+  // openSnackBar(message: string, action: string) {
+  //   this._snackBar.open(message, action, {
+  //     horizontalPosition: this.horizontalPosition,
+  //     verticalPosition: this.verticalPosition,
+  //     duration: 5000,
+  //   });
+  // }
 }

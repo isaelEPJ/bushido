@@ -9,12 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  currentUser?: UserModel;
+
   constructor(private router: Router, private usersService: UsersService) {}
 
   // user = sessionStorage.getItem<UserModel>('currentUser');
   // user = this.usersService.getUsersById('1') as UserModel;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const session = sessionStorage.getItem('currentUser');
+    if (session) {
+      this.currentUser = JSON.parse(session);
+    }
+  }
   SignOut() {
     sessionStorage.clear();
     return this.router.navigateByUrl('login');

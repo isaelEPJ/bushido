@@ -1,38 +1,56 @@
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 1em 1em;
 }
-.container img {
-  object-fit: cover;
-  width: 40%;
-  border-radius: 5px;
-}
-.container .detail-content {
-  width: 60%;
-  padding: 2em;
-  justify-content: space-around;
-  // background-color: #42fd71;
-}
-.title-text-page {
+
+.container .title-text-page {
   padding: 0.3em 0.8rem;
   width: 20%;
   // height: 2em;
   border-left: 5px solid #50fa7b;
   display: flex;
   flex-direction: row;
-  margin: 0 3%;
-  margin-top: 2%;
+  margin: 3%;
   font-size: 25px;
   font-weight: bold;
+  align-self: baseline;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
-.container .detail-content h1 {
-  font-size: 30px;
+.container .user-data-area {
+  padding: 2em;
+  // background-color: #c8c8c8;
+  box-shadow: 0 5px 15px #c8c8c8;
+}
+.container .user-data-area .detail-content {
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+.container .user-data-area .detail-content .title-detail-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0px 30px;
+}
+.container .user-data-area .title-detail-content .detail-content h1,
+h2,
+p {
+  // font-size: 30px;
   align-self: center;
 }
-.admin-detail {
+.container .user-data-area .detail-content img {
+  object-fit: contain;
+  width: 60%;
+  height: 35em;
+  border-radius: 5px;
+}
+
+.container .user-data-area .admin-detail {
   width: 100%;
   height: 3em;
   display: flex;
@@ -40,15 +58,15 @@
   justify-content: space-around;
   align-items: center;
   padding: 5px 0;
-  border: 0.3px solid #c8c8c8;
+  border: 0.3px solid #bebebe;
 }
-.admin-detail p {
+.container .user-data-area .admin-detail p {
   padding-top: 5px;
   font-size: 15px;
   font-weight: normal;
   align-self: center;
 }
-.pagamento-em-dia {
+.container .user-data-area .admin-detail .pagamento-em-dia {
   padding: 5px 2px;
   background-color: #a4fcba;
   border: 1px solid #42fd71;
@@ -57,8 +75,7 @@
   justify-content: center;
   font-size: 15px;
 }
-
-.pagamento-em-dia {
+.container .user-data-area .admin-detail .pagamento-em-dia {
   padding: 5px 7px;
   background-color: #fca4a4;
   border: 1px solid #fd4242;

@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './../../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -14,6 +15,6 @@ import { StudentDetailPageComponent } from './pages/student-detail-page/student-
     RegisterStudentsPageComponent,
     StudentDetailPageComponent,
   ],
-  imports: [CommonModule, RouterModule, SharedModule],
+  imports: [CommonModule, RouterModule, SharedModule, ReactiveFormsModule],
 })
 export class StudentsModule {}

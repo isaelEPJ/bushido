@@ -1,6 +1,6 @@
 import { StudentsService } from './../../services/students.service';
 import { ActivatedRoute } from '@angular/router';
-import { Student } from './../../model/student.mode';
+import { Student } from '../../model/student.model';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -10,6 +10,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class StudentDetailPageComponent implements OnInit {
   @Input() student?: Student;
+
   titleText?: string = 'Aluno';
 
   constructor(
@@ -18,8 +19,15 @@ export class StudentDetailPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.activateRoute.params.subscribe((params) => {
-      this.student = this.studentsService.getUserById(params.id);
-    });
+    this.activateRoute.params.subscribe(
+      (params) => {
+        this.studentsService.findStudentById(params.id).subscribe((std) => {
+          this.student = std;
+        });
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }
