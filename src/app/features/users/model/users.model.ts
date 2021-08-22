@@ -10,6 +10,7 @@ export interface UserModel {
   description: string;
   isAdmin: boolean;
   isActivate: boolean;
+  isSensei: boolean;
   alteredAt: Date;
   createdAt: Date;
 }

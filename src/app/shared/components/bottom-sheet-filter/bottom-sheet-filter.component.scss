@@ -1,0 +1,28 @@
+.container {
+  padding: 3em 0;
+}
+.container .filter-student-action {
+  padding: 1em 0 0.3em 0.8em;
+  border: 0.5px solid #c8c8c8;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  justify-content: space-around;
+  // box-shadow: 0 0 5px grey;
+}
+.container .filter-student-action:hover {
+  cursor: pointer;
+}
+.container .filter-button {
+  color: white;
+  margin: 0px 10px;
+  width: 3.5em;
+  height: 3.5em;
+  border: 1px solid #000;
+  background-color: #282931;
+  border-radius: 6px;
+}
+.container .filter-button:hover {
+  cursor: pointer;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px #282a36;
+}

@@ -27,15 +27,20 @@
   width: 85%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
   margin-bottom: 2em;
 }
 .container .user-data-area .detail-content .title-detail-content {
   display: flex;
+  height: 15em;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
+  align-items: baseline;
   padding: 0px 30px;
+  border-radius: 6px;
+  border-left: 5px solid #42fd71;
+  box-shadow: 0 5px 15px #bebebe;
 }
 .container .user-data-area .title-detail-content .detail-content h1,
 h2,
@@ -49,25 +54,57 @@ p {
   height: 35em;
   border-radius: 5px;
 }
-
+.option-button {
+  color: white;
+  width: 8em;
+  height: 2.6em;
+  border: 2px solid #000;
+  background-color: #282a36;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 0 1em;
+}
+.option-button:hover {
+  cursor: pointer;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px #282a36;
+}
 .container .user-data-area .admin-detail {
-  width: 100%;
-  height: 3em;
+  // width: 100%;
+  // height: 3em;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding: 5px 0;
-  border: 0.3px solid #bebebe;
+  border-top: 0.3px solid #bebebe;
 }
 .container .user-data-area .admin-detail p {
   padding-top: 5px;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: normal;
   align-self: center;
 }
+.container .user-data-area .admin-detail-2 {
+  // display: flex;
+  // flex-direction: column;
+  // // justify-content: space-around;
+  align-items: baseline;
+  padding: 5px 0;
+  border-top: 0.3px solid #bebebe;
+}
+.admin-detail-2 p {
+  font-size: 17px;
+  font-weight: normal;
+}
+.container .user-data-area mat-accordion {
+  padding: 0 1em;
+}
+.container .user-data-area mat-expansion-panel {
+  border-left: 4px solid #42fd71;
+}
 .container .user-data-area .admin-detail .pagamento-em-dia {
-  padding: 5px 2px;
+  padding: 8px;
   background-color: #a4fcba;
   border: 1px solid #42fd71;
   border-radius: 30px;
@@ -75,8 +112,8 @@ p {
   justify-content: center;
   font-size: 15px;
 }
-.container .user-data-area .admin-detail .pagamento-em-dia {
-  padding: 5px 7px;
+.container .user-data-area .admin-detail .no-pagamento-em-dia {
+  padding: 8px;
   background-color: #fca4a4;
   border: 1px solid #fd4242;
   border-radius: 30px;

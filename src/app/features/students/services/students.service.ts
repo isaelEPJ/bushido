@@ -1,3 +1,6 @@
+import { FailDialogComponent } from './../../../shared/components/dialogs/fail-dialog/fail-dialog.component';
+import { ConfirmationDialogComponent } from './../../../shared/components/dialogs/confirmation-dialog/confirmation-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 import { URL_BASE } from './../../../global/http';
 import { HttpClient } from '@angular/common/http';
 import { Student } from '../model/student.model';
@@ -14,7 +17,7 @@ export class StudentsService {
     { id: 4, belt: 'faixa marrom' },
     { id: 5, belt: 'faixa preta' },
   ];
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, private dialog: MatDialog) {}
 
   // students: Array<Student> = [];
 
@@ -31,7 +34,7 @@ export class StudentsService {
     });
   }
   findStudentById(id: string) {
-    return this.httpClient.get<Student>(URL_BASE + '/students/' + id);
+    return this.httpClient.get<Student>(URL_BASE + '/students/id/' + id);
   }
   createStudent(
     name: string,
@@ -51,7 +54,7 @@ export class StudentsService {
     location_numero: string,
     location_cep: string
   ) {
-   return this.httpClient.post(URL_BASE + '/students/create', {
+    return this.httpClient.post<Student>(URL_BASE + '/students/create', {
       name,
       email,
       cpf,
@@ -76,4 +79,7 @@ export class StudentsService {
   // getUserById(id: string) {
   //   return this.students.find((student) => student.id === id);
   // }
+  removeStudent(id: string) {
+    return this.httpClient.delete(URL_BASE + '/students/delete/' + id);
+  }
 }

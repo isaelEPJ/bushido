@@ -1,11 +1,11 @@
 import { RouterModule } from '@angular/router';
 import { SharedModule } from './../../shared/shared.module';
+import { DojoPageComponent } from './pages/dojo-page/dojo-page.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PlacesTrainingPageComponent } from './pages/places-training-page/places-training-page.component';
 
 @NgModule({
-  declarations: [PlacesTrainingPageComponent],
+  declarations: [DojoPageComponent],
   imports: [CommonModule, SharedModule, RouterModule],
 })
-export class PlacesModule {}
+export class DojoModule {}

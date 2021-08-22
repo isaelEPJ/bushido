@@ -1,7 +1,8 @@
+import { SenseiModule } from './features/sensei/sensei.module';
+import { DojoModule } from './features/dojo/dojo.module';
+import { ClassModule } from './features/class/class.module';
 import { UsersModule } from './features/users/users.module';
-import { PlacesModule } from './features/places/places.module';
 import { HelpModule } from './features/help/help.module';
-import { SportsModule } from './features/sports/sports.module';
 import { StudentsModule } from './features/students/students.module';
 import { HomeModule } from './features/home/home.module';
 import { SharedModule } from './shared/shared.module';
@@ -21,10 +22,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     HomeModule,
     StudentsModule,
-    SportsModule,
     HelpModule,
-    PlacesModule,
-    UsersModule
+    UsersModule,
+    ClassModule,
+    DojoModule,
+    SenseiModule,
   ],
   providers: [
     {

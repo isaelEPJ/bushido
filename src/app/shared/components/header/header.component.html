@@ -4,6 +4,7 @@
     <!-- <button mat-button [matMenuTriggerFor]="belowMenu">Below</button> -->
 
     <div class="user-card-profile" mat-button [matMenuTriggerFor]="belowMenu">
+      <mat-icon>expand_more</mat-icon>
       <div class="user-card-profile-detail">
         <p class="user-receptive">
           Olá, <a> {{ currentUser?.codename }} </a>
@@ -34,17 +35,12 @@
             <button mat-button>Planos</button>
           </mat-card-actions>
           <mat-card-actions>
-            <button mat-button>Sobre</button>
-          </mat-card-actions>
-          <mat-card-actions>
-            <button mat-button>Suas Agendas</button>
-          </mat-card-actions>
-          <mat-card-actions>
-            <button mat-button>Suas turmas</button>
-          </mat-card-actions>
-          <mat-card-actions>
             <button mat-button>Configuraçoes</button>
           </mat-card-actions>
+          <mat-card-actions>
+            <button mat-button routerLink="/help">Ajuda</button>
+          </mat-card-actions>
+
           <mat-card-actions>
             <button (click)="SignOut()" mat-button>Sair</button>
           </mat-card-actions>
@@ -58,9 +54,8 @@
       <ul>
         <li routerLink="/home">Inicio</li>
         <li *ngIf="currentUser!.isAdmin" routerLink="/students">Alunos</li>
-        <li routerLink="/sports">Turmas</li>
-        <li routerLink="/training_places">Dojos</li>
-        <li routerLink="/help">Ajuda</li>
+        <li routerLink="/turmas">Turmas</li>
+        <li routerLink="/sensei">Senseis</li>
         <li class="sign-out-button" (click)="SignOut()">Sair</li>
       </ul>
     </div>

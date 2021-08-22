@@ -6,25 +6,18 @@
   <div class="content-page">
     <div class="users-page-data">
       <div routerLink="/students/create" class="students-option">
-        <p>Cadastrar Aluno_</p>
+        <p><mat-icon>add_to_photos</mat-icon> Cadastrar Aluno</p>
       </div>
-      <div routerLink="/student/:id" class="students-option">
-        <p>Filtar Alunos_</p>
+      <div (click)="openBottomSheetFilter()" class="students-option">
+        <p><mat-icon>filter_list</mat-icon> Filtar Alunos</p>
       </div>
-      <div routerLink="/" class="students-option">
-        <p>Outro_</p>
+      <div routerLink="/help" class="students-option">
+        <p><mat-icon>help</mat-icon> Ajuda</p>
       </div>
       <div class="description-page">
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
+          Aqui estao Listados todos os alunos de sua equipe, Você poderá filtrar
+          alguns caso queira.
         </p>
       </div>
     </div>
@@ -41,7 +34,12 @@
             [alt]="student.name"
           />
 
-          <p>{{ student.name }}</p>
+          <div class="description-student-card">
+            <p>{{ student.name }}</p>
+            <p>{{ student.graduation }}</p>
+          </div>
+          <div></div>
+          <div></div>
         </div>
       </div>
     </div>

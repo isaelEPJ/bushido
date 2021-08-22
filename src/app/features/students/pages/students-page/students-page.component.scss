@@ -83,7 +83,7 @@
 .container .principal-users-page .student-scroll .students-list {
   display: flex;
   flex-direction: row;
-  // justify-content: space-between;
+  justify-content: baseline;
   height: 5em;
   border-radius: 6px;
   padding: 5px 10px;
@@ -91,6 +91,21 @@
   box-shadow: 1px 1px 4px 0px #c8c8c8;
 
   // border: 1px solid grey;
+}
+.description-student-card p {
+  font-size: 18px;
+  font-weight: normal;
+}
+.description-student-card p + p {
+  font-size: 16px;
+}
+.description-student-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 10px;
+  // margin-right: 40%;
 }
 .container .principal-users-page .students-list:hover {
   // box-shadow: inset  2px 0 3px #50fa7b;

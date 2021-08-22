@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SportsPageComponent } from './sports-page.component';
+import { SenseiDetailPageComponent } from './sensei-detail-page.component';
 
-describe('SportsPageComponent', () => {
-  let component: SportsPageComponent;
-  let fixture: ComponentFixture<SportsPageComponent>;
+describe('SenseiDetailPageComponent', () => {
+  let component: SenseiDetailPageComponent;
+  let fixture: ComponentFixture<SenseiDetailPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SportsPageComponent ]
+      declarations: [ SenseiDetailPageComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SportsPageComponent);
+    fixture = TestBed.createComponent(SenseiDetailPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,8 +1,10 @@
+import { BottomSheetFilterComponent } from './../../../../shared/components/bottom-sheet-filter/bottom-sheet-filter.component';
 import { FailDialogComponent } from 'src/app/shared/components/dialogs/fail-dialog/fail-dialog.component';
 import { Student } from '../../model/student.model';
 import { StudentsService } from './../../services/students.service';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
 
 @Component({
   selector: 'app-students-page',
@@ -16,9 +18,13 @@ export class StudentsPageComponent implements OnInit {
 
   constructor(
     private studentsService: StudentsService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private bottomSheet: MatBottomSheet
   ) {
     // this.students = studentsService.listStudents();
+  }
+  openBottomSheetFilter(): void {
+    this.bottomSheet.open(BottomSheetFilterComponent);
   }
 
   ngOnInit(): void {

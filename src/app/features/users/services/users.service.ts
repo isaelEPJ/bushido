@@ -50,6 +50,7 @@ export class UsersService {
       description: '',
       isAdmin: true,
       isActivate: true,
+      isSensei: false,
     });
   }
   getUserByEmailAndPassword(email: string, password: string) {

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PlacesTrainingPageComponent } from './places-training-page.component';
+import { BottomSheetFilterComponent } from './bottom-sheet-filter.component';
 
-describe('PlacesTrainingPageComponent', () => {
-  let component: PlacesTrainingPageComponent;
-  let fixture: ComponentFixture<PlacesTrainingPageComponent>;
+describe('BottomSheetFilterComponent', () => {
+  let component: BottomSheetFilterComponent;
+  let fixture: ComponentFixture<BottomSheetFilterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PlacesTrainingPageComponent ]
+      declarations: [ BottomSheetFilterComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PlacesTrainingPageComponent);
+    fixture = TestBed.createComponent(BottomSheetFilterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

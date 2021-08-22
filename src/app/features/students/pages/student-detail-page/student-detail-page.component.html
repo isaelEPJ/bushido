@@ -8,24 +8,82 @@
       <div class="title-detail-content">
         <h1>{{ student.name }}</h1>
         <h2>Graduaçao: {{ student.graduation }}</h2>
-        <p>Observaçoes: {{ student.details }}</p>
+        <div class="admin-detail">
+          <button type="button" class="option-button">Editar</button>
+          <button type="button" class="option-button">Add</button>
+
+          <button
+            type="button"
+            class="option-button"
+            (click)="removeStudent(student.id)"
+          >
+            Excluir
+          </button>
+        </div>
       </div>
     </div>
 
-    <!-- <h2>{{ student.name }}</h2> -->
-    <div class="admin-detail">
-      <p>Mensalidade:R$ {{ student.paymentDetail }}</p>
-      <p>Ultimo Pagamento: {{ student.payment_date }}</p>
-      <div
-        *ngIf="student.montlyPayment; else noPayment"
-        class="pagamento-em-dia"
-      >
-        Pago
-      </div>
-      <ng-template #noPayment>
-        <div class="pagamento-em-dia">Em Atraso</div>
-      </ng-template>
-    </div>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Detalhes </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="admin-detail">
+          <p>{{ student.graduation }}</p>
+          <p>Ultima graduaçao: {{ student.last_graduation_date }}</p>
+
+          <div></div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Observaçoes </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="admin-detail-2">
+          <p>{{ student.details }}</p>
+          <p>{{ student.lastGraduationDetail }}</p>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Detalhes Pessoais </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="admin-detail">
+          <p>Idade: {{ student.age }} anos</p>
+          <p>CPF: {{ student.cpf }}</p>
+          <p>{{ student.email }}</p>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Detalhes financeiros </mat-panel-title>
+          <!--
+          <mat-panel-description>  </mat-panel-description> -->
+        </mat-expansion-panel-header>
+        <div class="admin-detail">
+          <p>Mensalidade: R$ {{ student.paymentDetail }}</p>
+          <div
+            *ngIf="student.montlyPayment; else noPayment"
+            class="pagamento-em-dia"
+          >
+            Pago
+          </div>
+          <ng-template #noPayment>
+            <div class="no-pagamento-em-dia">Em Atraso</div>
+          </ng-template>
+          <div></div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
   </div>
 </div>
 <ng-template #templateteste><app-not-data></app-not-data></ng-template>

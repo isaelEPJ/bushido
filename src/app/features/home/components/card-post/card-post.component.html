@@ -1,0 +1,17 @@
+<mat-card class="content-card" *ngIf="post">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ post.title }}</mat-card-title>
+    <mat-card-subtitle>{{ post.subtitle }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="post.imageUrl" [alt]="post.title" />
+  <mat-card-content>
+    <p class="mat-card-image">
+      {{ post.content }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>Saiba mais</button>
+    <button mat-button>Compartilhe</button>
+  </mat-card-actions>
+</mat-card>

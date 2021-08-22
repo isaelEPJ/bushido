@@ -1,0 +1,13 @@
+<div class="container" *ngIf="post">
+  <div class="post">
+    <img [src]="post.imageUrl" [alt]="post.title" />
+    <div class="content-post">
+      <h1>{{ post.title }}</h1>
+      <h2>{{ post.subtitle }}</h2>
+      <p>{{ post.content }}</p>
+      <div class="action-content">
+        <button type="button">Saiba mais</button>
+      </div>
+    </div>
+  </div>
+</div>

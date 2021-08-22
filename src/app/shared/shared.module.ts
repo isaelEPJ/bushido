@@ -20,6 +20,10 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NotDataComponent } from './components/not-data/not-data.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { ConfirmationDialogComponent } from './components/dialogs/confirmation-dialog/confirmation-dialog.component';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { BottomSheetFilterComponent } from './components/bottom-sheet-filter/bottom-sheet-filter.component';
 
 const components = [
   HeaderComponent,
@@ -28,6 +32,7 @@ const components = [
   FailDialogComponent,
   NotFoundComponent,
   NotDataComponent,
+  BottomSheetFilterComponent,
 ];
 const materialModules = [
   MatDividerModule,
@@ -41,12 +46,20 @@ const materialModules = [
   MatSelectModule,
   MatMenuModule,
   MatCardModule,
+  MatExpansionModule,
+  MatBottomSheetModule,
 ];
 const pipes = [];
 const directives = [];
 
 @NgModule({
-  declarations: [...components, NotFoundComponent, NotDataComponent],
+  declarations: [
+    ...components,
+    NotFoundComponent,
+    NotDataComponent,
+    ConfirmationDialogComponent,
+    BottomSheetFilterComponent,
+  ],
   imports: [CommonModule, ...materialModules, RouterModule],
   exports: [...components, ...materialModules],
 })
