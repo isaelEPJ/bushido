@@ -27,9 +27,10 @@
   width: 85%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   margin-bottom: 2em;
+  padding: 20px;
 }
 .container .user-data-area .detail-content .title-detail-content {
   display: flex;
@@ -39,6 +40,7 @@
   align-items: baseline;
   padding: 0px 30px;
   border-radius: 6px;
+  margin-left: 1em;
   border-left: 5px solid #42fd71;
   box-shadow: 0 5px 15px #bebebe;
 }

@@ -30,7 +30,10 @@
         </mat-expansion-panel-header>
         <div class="admin-detail">
           <p>{{ student.graduation }}</p>
-          <p>Ultima graduaçao: {{ student.last_graduation_date }}</p>
+          <p>
+            Ultima graduaçao:
+            {{ student.last_graduation_date | date: "dd/MM/yyyy" }}
+          </p>
 
           <div></div>
         </div>
@@ -56,7 +59,7 @@
         </mat-expansion-panel-header>
         <div class="admin-detail">
           <p>Idade: {{ student.age }} anos</p>
-          <p>CPF: {{ student.cpf }}</p>
+          <p>CPF: {{ student.cpf | cpf: true }}</p>
           <p>{{ student.email }}</p>
         </div>
       </mat-expansion-panel>
@@ -70,7 +73,7 @@
           <mat-panel-description>  </mat-panel-description> -->
         </mat-expansion-panel-header>
         <div class="admin-detail">
-          <p>Mensalidade: R$ {{ student.paymentDetail }}</p>
+          <p>{{ student.paymentDetail | currency: "BRL" }}</p>
           <div
             *ngIf="student.montlyPayment; else noPayment"
             class="pagamento-em-dia"

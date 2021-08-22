@@ -1,10 +1,10 @@
 <div class="container">
   <div class="filter-student-action">
-    <p>
+    <p [formGroup]="formFilterGraduation">
       <mat-icon>flip</mat-icon> Filtrar por faixas
       <mat-form-field appearance="outline">
         <mat-label>Graduaçao</mat-label>
-        <mat-select formControlName="graduation">
+        <mat-select formControlName="graduation_filter">
           <mat-option
             *ngFor="let belt of bjjBelts"
             value="{{ belt.belt }}"
@@ -13,11 +13,16 @@
           >
         </mat-select>
       </mat-form-field>
-      <button class="filter-button"><mat-icon>search</mat-icon></button>
+      <button
+        class="filter-button"
+        (click)="filterByGraduation(formFilterName)"
+      >
+        <mat-icon>search</mat-icon>
+      </button>
     </p>
   </div>
   <div class="filter-student-action">
-    <p>
+    <p [formGroup]="formFilterName">
       <mat-icon>sort_by_alpha</mat-icon> Filtrar por Nome
       <mat-form-field appearance="outline">
         <mat-label>Nome</mat-label>
@@ -29,20 +34,24 @@
           placeholder="Ultimos detalhes"
         />
       </mat-form-field>
-      <button class="filter-button"><mat-icon>search</mat-icon></button>
+      <button class="filter-button" (click)="filterByName(formFilterName)">
+        <mat-icon>search</mat-icon>
+      </button>
     </p>
   </div>
   <div class="filter-student-action">
-    <p>
+    <p [formGroup]="formFilterPayment">
       <mat-icon> attach_money</mat-icon>
       Filtrar por Pagamento
       <mat-form-field appearance="outline">
-        <mat-select formControlName="graduation">
+        <mat-select formControlName="payment_filter">
           <mat-option value="pago" control>Pago</mat-option>
           <mat-option value="debito" control>Em debito</mat-option>
         </mat-select>
       </mat-form-field>
-      <button class="filter-button"><mat-icon>search</mat-icon></button>
+      <button class="filter-button" (click)="filterByPayment(formFilterName)">
+        <mat-icon>search</mat-icon>
+      </button>
     </p>
   </div>
 </div>

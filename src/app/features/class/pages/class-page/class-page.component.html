@@ -1,1 +1,43 @@
-<p>class-page works!</p>
+<app-header></app-header>
+<div class="container">
+  <h2 class="title-text-page" *ngIf="titleText">{{ titleText }}</h2>
+  <h2 class="title-text-page" *ngIf="!titleText">Sem titulo</h2>
+
+  <div class="content-page">
+    <div class="class-page-data">
+      <div routerLink="/class/create" class="class-option">
+        <p><mat-icon>add_to_photos</mat-icon> Cadastrar Turma</p>
+      </div>
+      <div (click)="openBottomSheetFilter()" class="class-option">
+        <p><mat-icon>filter_list</mat-icon> Filtar Turma</p>
+      </div>
+      <div routerLink="/help" class="class-option">
+        <p><mat-icon>help</mat-icon> Ajuda</p>
+      </div>
+      <div class="description-page">
+        <p>
+          Aqui estao Listados todos os Turma de sua equipe, Você poderá filtrar
+          alguns caso queira.
+        </p>
+      </div>
+    </div>
+    <div class="principal-class-page">
+      <div class="class-scroll">
+        <div
+          class="class-list"
+          *ngFor="let class of classes"
+          [routerLink]="['/class', class.id]"
+        >
+          <img class="user-image" [src]="class.imageUrl" [alt]="class.name" />
+
+          <div class="description-class-card">
+            <p>{{ class.name }}</p>
+            <p>{{ class.sensei }}</p>
+          </div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -29,10 +29,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SenseiModule,
   ],
   providers: [
-    {
-      provide: LOCALE_ID,
-      useValue: 'pt-BR',
-    },
+    // {
+    //   provide: LOCALE_ID,
+    //   useValue: 'pt-BR',
+    // },
   ],
   bootstrap: [AppComponent],
 })

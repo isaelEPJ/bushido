@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -24,6 +25,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { ConfirmationDialogComponent } from './components/dialogs/confirmation-dialog/confirmation-dialog.component';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { BottomSheetFilterComponent } from './components/bottom-sheet-filter/bottom-sheet-filter.component';
+import { CpfPipePipe } from './pipes/cpf-pipe.pipe';
 
 const components = [
   HeaderComponent,
@@ -49,18 +51,25 @@ const materialModules = [
   MatExpansionModule,
   MatBottomSheetModule,
 ];
-const pipes = [];
+const pipes = [CpfPipePipe];
 const directives = [];
 
 @NgModule({
   declarations: [
     ...components,
+    ...pipes,
     NotFoundComponent,
     NotDataComponent,
     ConfirmationDialogComponent,
     BottomSheetFilterComponent,
+    CpfPipePipe,
   ],
-  imports: [CommonModule, ...materialModules, RouterModule],
-  exports: [...components, ...materialModules],
+  imports: [
+    CommonModule,
+    ...materialModules,
+    RouterModule,
+    ReactiveFormsModule,
+  ],
+  exports: [...components, ...pipes, ...materialModules],
 })
 export class SharedModule {}

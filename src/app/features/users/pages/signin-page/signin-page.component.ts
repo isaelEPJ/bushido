@@ -17,7 +17,8 @@ import { FailDialogComponent } from 'src/app/shared/components/dialogs/fail-dial
 })
 export class SigninPageComponent implements OnInit {
   decorationImageUrl: string =
-    'https://images.unsplash.com/photo-1555597673-b21d5c935865?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWFydGlhbCUyMGFydHN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60';
+    // 'https://images.unsplash.com/photo-1624938518616-3be0add427d1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YnJhemlsaWFuJTIwaml1JTIwaml0c3V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60';
+  'https://images.unsplash.com/photo-1555597408-bda2ca384d49?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTF8fG1hcnRpYWwlMjBhcnRzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60';
   constructor(
     private usersService: UsersService,
     private router: Router,
