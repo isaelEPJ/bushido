@@ -1,0 +1,25 @@
+<div class="container" *ngIf="posts">
+  <h1>Alguns descontos do nosso programa</h1>
+  <div class="post">
+    <mat-card class="post-card" *ngFor="let post of posts">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ post.title }}</mat-card-title>
+        <mat-card-subtitle>{{ post.subtitle }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="post.imageUrl" [alt]="post.title" />
+      <mat-card-content>
+        <p>
+          {{ post.content }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>Saiba mais</button>
+        <button mat-button>Compartilhar</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+<app-not-found *ngIf="!posts"></app-not-found>
+

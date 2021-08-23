@@ -8,12 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./card-post.component.scss'],
 })
 export class CardPostComponent implements OnInit {
-  @Input()
-   post?: HomePost;
+  @Input() posts?: Array<HomePost>;
 
   constructor() {}
 
-  ngOnInit(): void {
-    // this.posts = this.homeService.homePost;
-  }
+  ngOnInit(): void {}
 }

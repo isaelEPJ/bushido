@@ -1,8 +1,14 @@
 <app-header></app-header>
+<div class="container-learning" *ngIf="postsLearning">
+  <app-learning-components [posts]="postsLearning"></app-learning-components>
+</div>
 
-<div class="container" *ngFor="let post of posts">
-  <!-- <div class="card-post-area">
-    <app-card-post [post]="post"></app-card-post>
-  </div> -->
-  <app-simple-post [post]="post"></app-simple-post>
+<div class="container-promotion">
+  <app-promotions-components
+    [posts]="postsPromotion"
+  ></app-promotions-components>
+</div>
+
+<div class="container-post">
+  <app-card-post [posts]="posts"></app-card-post>
 </div>

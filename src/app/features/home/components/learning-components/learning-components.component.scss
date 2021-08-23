@@ -4,40 +4,27 @@
   flex-direction: column;
   align-self: center;
   text-overflow: ellipsis;
+  margin-top: 2em;
 }
 .container h1 {
   border-left: 5px solid #50fa7b;
   margin-left: 1em;
-  padding: 0.3em 2em;
+  padding: 0.3em 1em;
 }
 .container .post {
-  // display: flex;
-  // flex-direction: column;
-  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
 }
 .container .post .post-card {
-  display: flex;
-  flex-direction: row;
   margin: 6%;
   // padding:  20px 0;
   box-shadow: 5px 10px 20px #bebebe;
-  max-width: 80em;
+  max-width: 17.5em;
   max-height: 27em;
 }
-.container .post .post-card .mat-card-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  text-overflow: ellipsis;
-  max-lines: 3;
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 10px;
-}
-
 .container .post .post-card img {
-  max-width: 30%;
-  max-height: 15em;
+  max-width: 100%;
+  max-height: 45%;
   object-fit: cover;
   margin: 0;
   padding: 0;
