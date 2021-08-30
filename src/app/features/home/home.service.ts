@@ -10,7 +10,7 @@ export class HomeService {
   homePost: Array<HomePost> = [
     {
       id: '1',
-      title: 'SObre o Jiu Jitsu',
+      title: 'Sobre o Jiu Jitsu',
       subtitle: 'Conheça a arte suave milenar',
       content:
         'Jiujitsu, mais conhecido na sua forma ocidentalizada Jiu-jitsu, ju-jitsu, é uma arte marcial japonesa, e também um esporte de combate, que utiliza técnicas de golpes de alavancas, torções e pressões para derrubar e dominar um oponente.',
@@ -24,7 +24,7 @@ export class HomeService {
       content:
         'A área de disputa entre dois atletas, chamada de ringue, tem área variável entre 64 e 100 metros quadrados. É restrita uma área menor para o combate, de modo que reste uma parte específica denominada de área de segurança. A cor do tatame da área de segurança é diferente da cor do tatame voltado à área de combate.',
       imageUrl:
-        'https://images.unsplash.com/photo-1515025617920-e1e674b5033c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aml1JTIwaml0c3V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+        'https://images.unsplash.com/photo-1564415315882-6ed9429af831?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aml1JTIwaml0c3V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
     },
     {
       id: '3',
@@ -43,9 +43,10 @@ export class HomeService {
       subtitle: 'Conheça a arte suave milenar',
       content:
         'O Jiu-Jitsu brasileiro ou, lá fora, o Brazilian Jiu-Jitsu ou BJJ (grafado também como jujitsu ou jujutsu) é uma arte marcial de raiz japonesa que se utiliza essencialmente de golpes de alavancas, torções e pressões para levar um oponente ao chão e dominá-lo. Literalmente, jū em japonês significa “suavidade”, “brandura”, e jutsu, “arte”, “técnica”. Daí seu sinônimo literal, “arte suave”.',
-      history: 'Sua origem secular, como sucede com quase todas as artes marciais ancestrais, não pode ser apontada com precisão. Estilos de luta parecidos foram verificados em diversos povos, da Índia à China, nos séculos III e VIII. O que se sabe é que seu ambiente de desenvolvimento e refinamento foram as escolas de samurais, a casta guerreira do Japão feudal.',
+      history:
+        'Sua origem secular, como sucede com quase todas as artes marciais ancestrais, não pode ser apontada com precisão. Estilos de luta parecidos foram verificados em diversos povos, da Índia à China, nos séculos III e VIII. O que se sabe é que seu ambiente de desenvolvimento e refinamento foram as escolas de samurais, a casta guerreira do Japão feudal.',
       imageUrl:
-        'http://3.bp.blogspot.com/-CxQYytFhLEY/ThxMM-JFD5I/AAAAAAAACRg/blp1iE1u3l8/s640/Jiu-Jitsu-logo.gif',
+        'https://images.unsplash.com/photo-1618572671704-ef4f3add69ee?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c2FtdXJhaSUyMGhpc3Rvcnl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
     },
     {
       id: '2',
@@ -75,7 +76,8 @@ export class HomeService {
       subtitle: 'Como funcionam nosso treinos',
       content:
         'Hélio Gracie foi o patriarca da família Gracie. Foi responsável pela difusão do Jiu-Jitsu no Brasil e idealizador do estilo de arte marcial brasileira conhecido como Jiu-jitsu brasileiro. Descendente distante de escoceses, quando era apenas uma criança sua família mudou-se para o Rio de Janeiro.',
-      history: ' (Belém do Pará, 1 de outubro de 1913 – Petrópolis, 29 de janeiro de 2009) foi o patriarca da família Gracie',
+      history:
+        ' (Belém do Pará, 1 de outubro de 1913 – Petrópolis, 29 de janeiro de 2009) foi o patriarca da família Gracie',
       imageUrl:
         'https://extra.globo.com/profile/bl_combateextra/23172747-4dd-582/w976h550-PROP/helio-gracie.jpg',
     },
@@ -94,5 +96,8 @@ export class HomeService {
     },
   ];
 
+  findLearningById(id: string) {
+    return this.homeLearning.find((post) => post.id === id) as HomeLearning;
+  }
   constructor() {}
 }

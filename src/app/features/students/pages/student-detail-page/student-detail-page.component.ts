@@ -1,3 +1,4 @@
+import { DialogAddClassComponent } from './../../components/dialog-add-class/dialog-add-class.component';
 import { StudentsService } from './../../services/students.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Student } from '../../model/student.model';
@@ -57,5 +58,11 @@ export class StudentDetailPageComponent implements OnInit {
         });
       }
     );
+  }
+  addStudentInClass(id: string) {
+    this.dialog.open(DialogAddClassComponent, {
+      maxWidth: '60%',
+      maxHeight: '80%',
+    });
   }
 }

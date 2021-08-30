@@ -6,6 +6,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { CardPostComponent } from './components/card-post/card-post.component';
 import { LearningComponentsComponent } from './components/learning-components/learning-components.component';
 import { PromotionsComponentsComponent } from './components/promotions-components/promotions-components.component';
+import { DetailBlogComponent } from './pages/detail-blog/detail-blog.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { PromotionsComponentsComponent } from './components/promotions-component
     CardPostComponent,
     LearningComponentsComponent,
     PromotionsComponentsComponent,
+    DetailBlogComponent,
   ],
   imports: [CommonModule, RouterModule, SharedModule],
 })

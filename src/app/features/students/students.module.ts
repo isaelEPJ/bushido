@@ -7,6 +7,7 @@ import { StudentsPageComponent } from './pages/students-page/students-page.compo
 import { StudentsOptionsComponent } from './components/students-options/students-options.component';
 import { RegisterStudentsPageComponent } from './pages/register-students-page/register-students-page.component';
 import { StudentDetailPageComponent } from './pages/student-detail-page/student-detail-page.component';
+import { DialogAddClassComponent } from './components/dialog-add-class/dialog-add-class.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { StudentDetailPageComponent } from './pages/student-detail-page/student-
     StudentsOptionsComponent,
     RegisterStudentsPageComponent,
     StudentDetailPageComponent,
+    DialogAddClassComponent,
   ],
   imports: [CommonModule, RouterModule, SharedModule, ReactiveFormsModule],
 })

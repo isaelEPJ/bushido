@@ -1,1 +1,28 @@
 <app-header></app-header>
+<h2 class="title-text-page" *ngIf="titleText">{{ titleText }}</h2>
+
+<div class="container">
+  <div class="top-content-area">
+    <div class="contact-help">
+      <p class="contact">0800 222 2121</p>
+      <p class="contact">isael.ijj@gmail.com</p>
+      <p class="contact">contato@bushido.com.br</p>
+      <p class="contact">https://linkedin.com/uas/bushido</p>
+      <p class="contact">https://facebook.com.br/bushido/descubra</p>
+    </div>
+    <p class="contact-text">
+      Entre em contato conosco para saber solucionar suas duvidas
+    </p>
+  </div>
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> Como Cadastrar uma turma </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="admin-detail-2">
+        <p>student.details</p>
+        <p>student.lastGraduationDetail</p>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

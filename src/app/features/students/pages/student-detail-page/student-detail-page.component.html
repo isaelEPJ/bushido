@@ -10,7 +10,13 @@
         <h2>Graduaçao: {{ student.graduation }}</h2>
         <div class="admin-detail">
           <button type="button" class="option-button">Editar</button>
-          <button type="button" class="option-button">Add</button>
+          <button
+            type="button"
+            class="option-button"
+            (click)="addStudentInClass(student.id)"
+          >
+            Add
+          </button>
 
           <button
             type="button"

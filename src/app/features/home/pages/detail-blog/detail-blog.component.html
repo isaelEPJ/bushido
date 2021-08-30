@@ -1,0 +1,18 @@
+<app-header></app-header>
+<h2 class="title-text-page" *ngIf="post?.title">{{ post?.title }}</h2>
+
+<div class="container">
+  <img class="image-principal" [src]="post?.imageUrl" [alt]="post?.title" />
+  <div class="content-area">
+    <h1 class="content-title">{{ post?.title }} <mat-divider></mat-divider></h1>
+    <h3 class="content-subtitle">
+      {{ post?.subtitle }} <mat-divider></mat-divider>
+    </h3>
+    <p class="content-text">{{ post?.content }} <mat-divider></mat-divider></p>
+    <h3>História</h3>
+    <p class="content-history">
+      {{ post?.history }}
+      <mat-divider></mat-divider>
+    </p>
+  </div>
+</div>

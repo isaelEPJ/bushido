@@ -1,12 +1,12 @@
 import { Student } from '../../students/model/student.model';
 
 export interface Class {
-  id: string;
+  id:string;
   name: string;
-  sensei: string;
+  sensei_id: string;
   imageUrl: string;
   dojo: string;
-  students: Student[];
+  student_id: string;
   description: string;
   location_cidade: string;
   location_rua: string;
@@ -15,6 +15,4 @@ export interface Class {
   location_estado: string;
   isActivate: boolean;
   date_event: Date;
-  altered_at: Date;
-  created_at: Date;
 }

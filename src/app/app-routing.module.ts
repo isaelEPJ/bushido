@@ -1,3 +1,4 @@
+import { DetailBlogComponent } from './features/home/pages/detail-blog/detail-blog.component';
 import { SenseiPageComponent } from './features/sensei/pages/sensei-page/sensei-page.component';
 import { ClassPageComponent } from './features/class/pages/class-page/class-page.component';
 import { SignupPageComponent } from './features/users/pages/signup-page/signup-page.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'login', component: SigninPageComponent },
   { path: 'register', component: SignupPageComponent },
   { path: 'home', component: HomePageComponent, canActivate: [AuthGuard] },
+  { path: 'home/:id', component: DetailBlogComponent, canActivate: [AuthGuard] },
   //inicio das rotas relacionadas a estudantes
   {
     path: 'students',
